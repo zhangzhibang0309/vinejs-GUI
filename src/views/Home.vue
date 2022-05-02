@@ -17,7 +17,8 @@
         v-for="(item, index) in indexList" 
         :key="index" :title="item.title"
         :description="item.description"
-        :icon="item.icon"
+        :icon="item.icon" :mode="item.mode"
+        @clickCard="handleClickCard"
         ></HomeSelect>
       </div>
     </div>
@@ -30,19 +31,34 @@ const indexList = [
   {
     title: '创建新项目',
     description: '使用 Vine.js 为你创建一个全新的 Web 应用，快速搭建个人网站，在本地修改、调试，并使用部署器发布上线。',
-    icon: 'create'
+    icon: 'icon-create',
+    mode: 'create'
   },
   {
     title: '打开已有项目',
     description: '选择一个已经创建好的 Vine.js 项目，继续维护你的网站，为网站添加扩展件，修改部署器配置等。',
-    icon: 'open'
+    icon: 'icon-open',
+    mode: 'open'
+    
   },
   {
     title: '升级 Guider 版本',
     description: '自动更新 Guider 到最新版本，获取最新 Vine.js Guider 功能，解决已有问题。',
-    icon: 'update'
+    icon: 'icon-update',
+    mode: 'update'
   }
 ]
+
+const handleClickCard = (mode) => {
+  switch (mode) {
+    case 'create':
+      break;
+    case 'open':
+      break;
+    case 'update':
+      break;
+  }
+}
 
 </script>
 
