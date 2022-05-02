@@ -4,12 +4,12 @@
       <div class="mt-8 flex lg:mt-0 w-full justify-center">
         <div class="inline-flex rounded-md w-9/12 justify-between">
           <router-link :to="item.to" v-for="(item, index) in NavList" :key="index"
-            class="inline-flex items-center justify-center rounded-full shadow router-btn
-            border border-transparent bg-green-600 px-1 py-1 text-base mr-5 w-16 h-16
+            class="inline-flex items-center justify-center rounded-full shadow-md router-btn
+            border border-transparent bg-green-600 px-1 py-1 text-base mr-5 w-16 h-16 relative
             font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-green-500 focus:outline-none"
             >
-            <div class="icon" :class="item.icon"></div>
-            <div class="hover-description">
+            <div class="icon absolute" :class="item.icon"></div>
+            <div class="hover-description absolute">
               {{ item.name }}
             </div>
           </router-link>
@@ -42,7 +42,7 @@
       icon: 'icon-extensions'
     },
     {
-      to: '/tasks',
+      to: '/task',
       name: '命令',
       icon: 'icon-task'
     },
@@ -60,18 +60,21 @@
 </script>
 
 <style lang="scss" scoped>
-  * {
-    transition: all .1s ease;
+  .hover-description, .icon {
+    transition: all .25s ease;
   }
   .hover-description {
-    display: none;
+    opacity: 0;
+  }
+  .icon {
+    opacity: 1;
   }
   .router-btn:hover {
     .hover-description {
-      display: flex;
+      opacity: 1;
     }
     .icon {
-      display: none;
+      opacity: 0;
     }
   }
   
@@ -82,37 +85,37 @@
   }
   
   .icon-home {
-    background: url('../../public/home.svg');
+    background: url('/home.svg');
     background-size: contain;
   }
 
   .icon-dashboard {
-    background: url('../../public/dashboard.svg');
+    background: url('/dashboard.svg');
     background-size: contain;
   }
 
   .icon-setting {
-    background: url('../../public/setting.svg');
+    background: url('/setting.svg');
     background-size: contain;
   }
 
   .icon-extensions {
-    background: url('../../public/appstore-add.svg');
+    background: url('/appstore-add.svg');
     background-size: contain;
   }
 
   .icon-task {
-    background: url('../../public/code.svg');
+    background: url('/code.svg');
     background-size: contain;
   }
 
   .icon-about {
-    background: url('../../public/info-circle.svg');
+    background: url('/info-circle.svg');
     background-size: contain;
   }
 
   .icon-help {
-    background: url('../../public/question-circle.svg');
+    background: url('/question-circle.svg');
     background-size: contain;
   }
 </style>
