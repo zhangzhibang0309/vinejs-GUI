@@ -1,7 +1,3 @@
-<script setup>
-import ButtonRepo from '@/components/ButtonRepo.vue'
-</script>
-
 <template>
   <div class="bg-gray-50">
     <div
@@ -27,3 +23,7 @@ import ButtonRepo from '@/components/ButtonRepo.vue'
     </div>
   </div>
 </template>
+
+<script setup>
+import ButtonRepo from '@/components/ButtonRepo.vue'
+</script>
