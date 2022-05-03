@@ -10,16 +10,122 @@
           <span class="core-text"></span>
         </div>
       </div>
+      <div class="orbment-lines">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="line4"></div>
+        <div class="line5"></div>
+      </div>
     </div>
-    <div class="flex p-6 orbment-right-part">
-      <div class="flex flex-wrap">123</div>
-    </div>
+    <div class="flex p-6 orbment-right-part"></div>
   </div>
 </template>
 
 <script setup></script>
 
 <style lang="scss" scoped>
+
+@keyframes flow {
+  100% {
+    background-position: -400% 0;
+  }
+}
+.orbment-lines {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  // border: 1px solid red;
+  left: 30%;
+
+  div {
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    // background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    position: absolute;
+    z-index: 1;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      right: -5px;
+      top: -5px;
+      bottom: -5px;
+      filter: blur(10px);
+      z-index: -1;
+      
+    }
+  }
+
+  .line1 {
+    top: 11rem;
+    background: linear-gradient(90deg, #ffffff, #c59e00, #ffffff);
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+    transform: rotate(315deg);
+    left: 45px;
+    &::before {
+      background: linear-gradient(90deg, #ffffffd5, #c59e00d5, #ffffffd5);
+      background-size: 400%;
+      animation: flow 4.5s linear infinite;
+    }
+  }
+
+  .line2 {
+    top: 17rem;
+    background: linear-gradient(90deg, #ffffff, #0086c5, #ffffff);
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+    transform: rotate(340deg);
+    left: 8px;
+    &::before {
+      background: linear-gradient(90deg, #ffffffd5, #0086c5d5, #ffffffd5);
+      background-size: 400%;
+      animation: flow 4.5s linear infinite;
+    }
+  }
+
+  .line3 {
+    top: 21rem;
+    background: linear-gradient(90deg, #ffffff, #c50000, #ffffff);
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+    &::before {
+      background: linear-gradient(90deg, #ffffffd5, #c50000d5, #ffffffd5);
+      background-size: 400%;
+      animation: flow 4.5s linear infinite;
+    }
+  }
+  .line4 {
+    top: 25rem;
+    background: linear-gradient(90deg, #ffffff, #c500a1, #ffffff);
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+    transform: rotate(20deg);
+    left: 8px;
+    &::before {
+      background: linear-gradient(90deg, #ffffffd5, #c500a1d5, #ffffffd5);
+      background-size: 400%;
+      animation: flow 4.5s linear infinite;
+    }
+  }
+
+  .line5 {
+    top: 32rem;
+    background: linear-gradient(90deg, #ffffff, #2bc500, #ffffff);
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+    transform: rotate(45deg);
+    left: 45px;
+    &::before {
+      background: linear-gradient(90deg, #ffffffd5, #2bc500d5, #ffffffd5);
+      background-size: 400%;
+      animation: flow 4.5s linear infinite;
+    }
+  }
+}
+
 @keyframes clockwise {
   0% {
     transform: rotate(0deg);
@@ -94,6 +200,7 @@
   // border: 1px solid red;
   margin-bottom: 5rem;
   position: relative;
+  z-index: 10;
 }
 
 .orbment-core-outer {
@@ -130,7 +237,7 @@
   height: 80%;
   position: absolute;
   border-radius: 50%;
-  background: $orbment-silver;
+  background: $orbment-red;
   top: 0;
   left: 0;
   bottom: 0;
