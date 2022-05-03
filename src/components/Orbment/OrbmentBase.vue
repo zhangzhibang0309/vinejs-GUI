@@ -18,11 +18,35 @@
         <div class="line5"></div>
       </div>
     </div>
-    <div class="flex p-6 orbment-right-part"></div>
+    <div class="flex p-6 orbment-right-part">
+      <div class="right-line1">
+        <OrbmentCircuit :link="link1_Data"></OrbmentCircuit>
+      </div>
+      <div class="right-line2">
+        <OrbmentCircuit :link="link2_Data"></OrbmentCircuit>
+      </div>
+      <div class="right-line3">
+        <OrbmentCircuit :link="link3_Data"></OrbmentCircuit>
+      </div>
+      <div class="right-line4">
+        <OrbmentCircuit :link="link4_Data"></OrbmentCircuit>
+      </div>
+      <div class="right-line5">
+        <OrbmentCircuit :link="link5_Data"></OrbmentCircuit>
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import OrbmentCircuit from './OrbmentCircuit.vue';
+let core_Data = {};
+let link1_Data = [];
+let link2_Data = [];
+let link3_Data = [];
+let link4_Data = [];
+let link5_Data = [];
+</script>
 
 <style lang="scss" scoped>
 
@@ -37,6 +61,7 @@
   height: 100%;
   // border: 1px solid red;
   left: 30%;
+  top: 35px;
 
   div {
     width: 100%;
@@ -59,28 +84,28 @@
   }
 
   .line1 {
-    top: 11rem;
-    background: linear-gradient(90deg, #ffffff, #c59e00, #ffffff);
+    top: 11.5rem;
+    background: $orbment-line1;
     background-size: 400%;
     animation: flow 4.5s linear infinite;
     transform: rotate(315deg);
     left: 45px;
     &::before {
-      background: linear-gradient(90deg, #ffffffd5, #c59e00d5, #ffffffd5);
+      background: $orbment-line1-light;
       background-size: 400%;
       animation: flow 4.5s linear infinite;
     }
   }
 
   .line2 {
-    top: 17rem;
-    background: linear-gradient(90deg, #ffffff, #0086c5, #ffffff);
+    top: 16.2rem;
+    background: $orbment-line2;
     background-size: 400%;
     animation: flow 4.5s linear infinite;
     transform: rotate(340deg);
     left: 8px;
     &::before {
-      background: linear-gradient(90deg, #ffffffd5, #0086c5d5, #ffffffd5);
+      background: $orbment-line2-light;
       background-size: 400%;
       animation: flow 4.5s linear infinite;
     }
@@ -88,38 +113,38 @@
 
   .line3 {
     top: 21rem;
-    background: linear-gradient(90deg, #ffffff, #c50000, #ffffff);
+    background: $orbment-line3;
     background-size: 400%;
     animation: flow 4.5s linear infinite;
     &::before {
-      background: linear-gradient(90deg, #ffffffd5, #c50000d5, #ffffffd5);
+      background: $orbment-line3-light;
       background-size: 400%;
       animation: flow 4.5s linear infinite;
     }
   }
   .line4 {
-    top: 25rem;
-    background: linear-gradient(90deg, #ffffff, #c500a1, #ffffff);
+    top: 25.8rem;
+    background: $orbment-line4;
     background-size: 400%;
     animation: flow 4.5s linear infinite;
     transform: rotate(20deg);
     left: 8px;
     &::before {
-      background: linear-gradient(90deg, #ffffffd5, #c500a1d5, #ffffffd5);
+      background: $orbment-line4-light;
       background-size: 400%;
       animation: flow 4.5s linear infinite;
     }
   }
 
   .line5 {
-    top: 32rem;
-    background: linear-gradient(90deg, #ffffff, #2bc500, #ffffff);
+    top: 30.5rem;
+    background: $orbment-line5;
     background-size: 400%;
     animation: flow 4.5s linear infinite;
     transform: rotate(45deg);
     left: 45px;
     &::before {
-      background: linear-gradient(90deg, #ffffffd5, #2bc500d5, #ffffffd5);
+      background: $orbment-line5-light;
       background-size: 400%;
       animation: flow 4.5s linear infinite;
     }
@@ -178,6 +203,86 @@
   border-radius: 0.5rem;
   background-repeat: no-repeat;
   box-shadow: #3b3b3ba8 4px 3px 5px 2px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  z-index: 0;
+  & > div {
+    width: 100%;
+    height: 8px;
+    margin-top: 1px;
+    border-radius: 10px;
+    animation: flow 4.5s linear infinite;
+    z-index: 1;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      right: -5px;
+      top: -5px;
+      bottom: -5px;
+      filter: blur(10px);
+      z-index: -1;
+      animation: flow 4.5s linear infinite;
+    }
+  }
+}
+
+.right-line1 {
+  background: $orbment-line1;
+  background-size: 400%;
+  animation: flow 4.5s linear infinite;
+  &::before {
+    background: $orbment-line1-light;
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+  }
+}
+
+.right-line2 {
+  background: $orbment-line2;
+  background-size: 400%;
+  animation: flow 4.5s linear infinite;
+  &::before {
+    background: $orbment-line2-light;
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+  }
+}
+
+.right-line3 {
+  background: $orbment-line3;
+  background-size: 400%;
+  animation: flow 4.5s linear infinite;
+  &::before {
+    background: $orbment-line3-light;
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+  }
+}
+
+.right-line4 {
+  background: $orbment-line4;
+  background-size: 400%;
+  animation: flow 4.5s linear infinite;
+  &::before {
+    background: $orbment-line4-light;
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+  }
+}
+
+.right-line5 {
+  background: $orbment-line5;
+  background-size: 400%;
+  animation: flow 4.5s linear infinite;
+  &::before {
+    background: $orbment-line5-light;
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+  }
 }
 
 .orbment-left-part {
@@ -193,12 +298,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 .orbment-core-box {
   width: 15rem;
   height: 15rem;
-  // border: 1px solid red;
-  margin-bottom: 5rem;
   position: relative;
   z-index: 10;
 }
