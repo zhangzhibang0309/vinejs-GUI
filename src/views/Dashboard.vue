@@ -1,10 +1,7 @@
 <template>
-  <div class="container flex flex-row">
+  <div class="container flex flex-row align-super justify-center">
     <div class="orbment-main w-4/5">
       <OrbmentBase></OrbmentBase>
-    </div>
-    <div class="orbment-side w-1/5">
-
     </div>
   </div>
 </template>

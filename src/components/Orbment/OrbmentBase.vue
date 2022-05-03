@@ -41,11 +41,81 @@
 <script setup>
 import OrbmentCircuit from './OrbmentCircuit.vue';
 let core_Data = {};
-let link1_Data = [];
-let link2_Data = [];
-let link3_Data = [];
-let link4_Data = [];
-let link5_Data = [];
+let link1_Data = [
+  {
+    name: 'blog-friend',
+    alias: '博客友链',
+    color: 'aqua'
+  },
+  {
+    name: 'netease-music',
+    alias: '网易云播放器',
+    color: 'red'
+  },
+  {
+    name: 'valine',
+    alias: 'valine评论区',
+    color: 'green'
+  },
+  {
+    name: 'github-fork',
+    alias: 'GitHub Fork',
+    color: 'silver'
+  },
+  {
+    name: 'busuanzi',
+    alias: '不算子网站统计',
+    color: 'green'
+  }
+];
+let link2_Data = [
+  {
+    name: 'rich-text',
+    alias: '富文本文档',
+    color: 'dark'
+  },
+  {
+    name: 'mysql',
+    alias: 'MySQL数据库',
+    color: 'aqua'
+  },
+  {
+    name: 'ali-oss-img',
+    alias: '阿里云OSS图床',
+    color: 'light'
+  }
+];
+let link3_Data = [
+  {
+    name: 'compress-img',
+    alias: '图片压缩',
+    color: 'brown'
+  }
+];
+let link4_Data = [
+  {
+    name: 'sakura-theme',
+    alias: '主题-樱',
+    color: 'red'
+  },
+  {
+    name: 'sakura-theme-friend',
+    alias: '主题-樱-友链',
+    color: 'red'
+  },
+  {
+    name: 'mouse-click',
+    alias: '鼠标点击动效',
+    color: 'silver'
+  }
+];
+let link5_Data = [
+  {
+    name: 'reward',
+    alias: '功能-打赏',
+    color: 'light'
+  }
+];
 </script>
 
 <style lang="scss" scoped>
@@ -341,7 +411,7 @@ let link5_Data = [];
   height: 80%;
   position: absolute;
   border-radius: 50%;
-  background: $orbment-red;
+  background: $orbment-aqua;
   top: 0;
   left: 0;
   bottom: 0;
@@ -362,23 +432,6 @@ let link5_Data = [];
     filter: blur(5px);
     z-index: 2;
   }
-  // &::after {
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   position: absolute;
-  //   top: 32%;
-  //   left: 23%;
-  //   border-radius: 50%;
-  //   background: radial-gradient(
-  //     circle at 58% 66%,
-  //     rgba(255, 255, 255, 0.4),
-  //     rgba(255, 255, 255, 0.2) 14%,
-  //     rgba(255, 255, 255, 0) 24%
-  //   );
-  //   transform: translateX(-80px) translateY(-88px) skewX(184deg);
-  //   filter: blur(10px);
-  // }
   .shadow {
     position: absolute;
     width: 100%;
@@ -398,7 +451,7 @@ let link5_Data = [];
     height: 100%;
     position: absolute;
     &::before {
-      content: "";
+      content: "blog";
       position: absolute;
       left: 0;
       top: 3rem;
