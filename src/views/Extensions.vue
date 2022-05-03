@@ -12,6 +12,7 @@
           <div>
             <ExtSideItem
               v-for="item in extList"
+              @click="changeActive(item.id)"
               :key="item.id"
               :name="item.name"
               :id="item.id"
@@ -64,8 +65,13 @@
 <script setup>
 import ExtSideItem from "@/components/ExtSideItem.vue";
 import ExtCard from "@/components/ExtCard.vue";
+import { ref } from 'vue';
 
-const active = 0;
+let active = ref(0);
+
+const changeActive = (id) => {
+  active.value = id;
+}
 
 const searchAns = [
   {

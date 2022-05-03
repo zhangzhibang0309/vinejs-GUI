@@ -1,23 +1,25 @@
 <template>
   <a
-    class="w-full font-thin uppercase text-gray-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start border-r-4 "
-    href="#" :class="{ 'bg-green-50': id === active, 'border-green-500': id === active, 'text-green-500': id === active }"
+    class="w-full font-thin text-gray-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start border-r-4 side-link"
+    :class="{ 'active': id === active }"
   >
-    <i class="text-left icon orb-core" :class="icon"></i>
+    <i class="text-left icon" :class="icon"></i>
     <span class="mx-4 text-sm font-normal"> {{ name }} </span>
   </a>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, toRef } from 'vue'
 
 export default defineComponent({
   props: ['name', 'id', 'icon', 'active'],
-  setup(props, ctx) {
+  setup(props) {
+    const active = toRef(props, 'active');
     return {
       name: props.name,
       id: props.id,
-      icon: props.icon
+      icon: props.icon,
+      active
     }
   },
 })
@@ -25,6 +27,20 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
+  .side-link {
+    transition: all .25s ease;
+    &.active {
+      background-color: #ECFDF5;
+      border-color: #10B981;
+      color: #10B981;
+    }
+  }
+  .side-link:hover {
+    cursor: pointer;
+    background-color: #ECFDF5;
+    border-color: #10B981;
+    color: #10B981;
+  }
   .orb-core {
     background: url('/orb-core.svg');
     background-size: contain;
@@ -52,6 +68,11 @@ export default defineComponent({
 
   .orb-feature {
     background: url('/orb-feature.svg');
+    background-size: contain;
+  }
+
+  .orb-style {
+    background: url('/orb-style.svg');
     background-size: contain;
   }
 
