@@ -1,5 +1,6 @@
 <template>
-  <div class="circuit-line">
+  <div class="circuit-line" :class="{ 'deployer': showDeployer }">
+    <span class="line-name tracking-widest">{{ name.toUpperCase() }}</span>
     <div class="circuit-unit" v-for="(item, index) in data" :key="index">
       <div class="circuit-slot" :class="'circuit-' + item.color"></div>
       <div class="circuit-info mt-3 text-sm px-1 py-1 shadow-md bg-gray-900 border border-gray-800 rounded-lg">
@@ -13,11 +14,18 @@
 import { defineComponent, toRef } from "vue";
 
 export default defineComponent({
-  props: ["link"],
+  props: ["link", 'deployer', 'name'],
   setup(props) {
     const data = toRef(props, "link");
+    let showDeployer = false;
+    const name = toRef(props, "name");
+    if (props.deployer) {
+      showDeployer = true;
+    }
     return {
       data,
+      showDeployer,
+      name
     };
   },
 });
@@ -25,6 +33,17 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+.line-name {
+  font-family: 'orbment';
+  font-style: italic;
+  font-size: 28px;
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+}
+.deployer {
+  padding-left: 32rem!important;
+}
 .circuit-brown { background: $orbment-brown; border-color: #d1812a; }
 .circuit-aqua { background: $orbment-aqua; border-color: #bbfeff; }
 .circuit-red { background: $orbment-red; border-color: #ffbbbb; }

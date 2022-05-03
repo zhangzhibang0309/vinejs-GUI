@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "orbment";
+  src: url("../../../public/font/sszhjt.ttf") format("ttf"),
+       url("../../../public/font/sszhjt.woff") format("woff"),
+       url("../../../public/font/sszhjt.woff2") format("woff2");
+}
+
 $orbment-brown: radial-gradient(
   circle at 50% 120%,
   #f6cd81,
@@ -70,3 +77,6 @@ $orbment-line4-light: linear-gradient(90deg, #ffffffd5, #c500a1d5, #ffffffd5);
 
 $orbment-line5: linear-gradient(90deg, #ffffff, #2bc500, #ffffff);
 $orbment-line5-light: linear-gradient(90deg, #ffffffd5, #2bc500d5, #ffffffd5);
+
+$orbment-deployer: linear-gradient(150deg, #3bb4ff, #88d425, #3bf8ff);
+$orbment-deployer-light: linear-gradient(150deg, #3bb4ff51, #88d42551, #3bf8ff51);

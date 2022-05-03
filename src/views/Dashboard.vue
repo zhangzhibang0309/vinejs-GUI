@@ -1,6 +1,6 @@
 <template>
   <div class="container flex flex-row align-super justify-center">
-    <div class="orbment-main w-4/5">
+    <div class="orbment-main w-full">
       <OrbmentBase></OrbmentBase>
     </div>
   </div>

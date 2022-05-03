@@ -7,32 +7,38 @@
         <div class="orbment-core-inner"></div>
         <div class="orbment-core">
           <span class="shadow"></span>
-          <span class="core-text"></span>
+          <span class="core-text">
+            BLOG
+          </span>
         </div>
       </div>
       <div class="orbment-lines">
         <div class="line1"></div>
         <div class="line2"></div>
-        <div class="line3"></div>
+        <div class="line3">
+          <div class="deployer-line tracking-wider">
+            DEPLOYER - GIT
+          </div>
+        </div>
         <div class="line4"></div>
         <div class="line5"></div>
       </div>
     </div>
     <div class="flex p-6 orbment-right-part">
       <div class="right-line1">
-        <OrbmentCircuit :link="link1_Data"></OrbmentCircuit>
+        <OrbmentCircuit :link="link1_Data" :name="'feature'"></OrbmentCircuit>
       </div>
       <div class="right-line2">
-        <OrbmentCircuit :link="link2_Data"></OrbmentCircuit>
+        <OrbmentCircuit :link="link2_Data" :name="'data'"></OrbmentCircuit>
       </div>
       <div class="right-line3">
-        <OrbmentCircuit :link="link3_Data"></OrbmentCircuit>
+        <OrbmentCircuit :link="link3_Data" :name="'build'" :deployer="true"></OrbmentCircuit>
       </div>
       <div class="right-line4">
-        <OrbmentCircuit :link="link4_Data"></OrbmentCircuit>
+        <OrbmentCircuit :link="link4_Data" :name="'style'"></OrbmentCircuit>
       </div>
       <div class="right-line5">
-        <OrbmentCircuit :link="link5_Data"></OrbmentCircuit>
+        <OrbmentCircuit :link="link5_Data" :name="'custom'"></OrbmentCircuit>
       </div>
     </div>
   </div>
@@ -125,15 +131,67 @@ let link5_Data = [
     background-position: -400% 0;
   }
 }
+
+@keyframes flow-core {
+  0% {
+    background-position: 500% 0;
+  }
+  25% {
+    background-position: 450% 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  75% {
+    background-position: 450% 0;
+  }
+  100% {
+    background-position: 500% 0;
+  }
+}
+
+.deployer-line {
+  font-family: 'orbment';
+  font-style: italic;
+  width: 22rem;
+  height: 4rem;
+  position: absolute;
+  bottom: -1.8rem;
+  left: 10rem;
+  background: $orbment-deployer;
+  background-size: 400%;
+  animation: flow 4.5s linear infinite;
+  border-color: #2a91d192;
+  border-width: 4px;
+  border-style: outset;
+  box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 12px 3px;
+  color: white;
+  text-align: center;
+  line-height: 3rem;
+  font-weight: 500;
+  font-size: 26px;
+  &::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    filter: blur(10px);
+    background: $orbment-deployer-light;
+    background-size: 400%;
+    animation: flow 4.5s linear infinite;
+  }
+}
+
 .orbment-lines {
   position: absolute;
   width: 70%;
   height: 100%;
-  // border: 1px solid red;
   left: 30%;
   top: 35px;
 
-  div {
+  & > div {
     width: 100%;
     height: 8px;
     border-radius: 10px;
@@ -149,7 +207,6 @@ let link5_Data = [
       bottom: -5px;
       filter: blur(10px);
       z-index: -1;
-      
     }
   }
 
@@ -412,6 +469,8 @@ let link5_Data = [
   position: absolute;
   border-radius: 50%;
   background: $orbment-aqua;
+  background-size: 400%;
+  animation: flow-core 5s linear infinite;
   top: 0;
   left: 0;
   bottom: 0;
@@ -450,18 +509,16 @@ let link5_Data = [
     width: 100%;
     height: 100%;
     position: absolute;
-    &::before {
-      content: "blog";
-      position: absolute;
-      left: 0;
-      top: 3rem;
-      right: 0;
-      bottom: 0;
-      color: rgba(255, 255, 255, 0.8);
-      text-align: center;
-      font-family: Arial;
-      font-size: 50px;
-    }
+    font-family: 'orbment';
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    right: 0;
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 50px;
   }
 }
 </style>
