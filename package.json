@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "dayjs": "^1.11.1",
+    "dayjs": "^1.11.2",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
   },
