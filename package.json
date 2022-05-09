@@ -9,7 +9,7 @@
   "dependencies": {
     "dayjs": "^1.11.1",
     "vue": "^3.2.33",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",
